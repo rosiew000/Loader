@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .loader {display: inline-block; min-width: 300px; padding: 10px; margin-bottom: 10px; }
+        .className {font-family: sans-serif;}
+        .info{display: inline-block; width: 600px;}
+        a {padding: 0 20px;}
+        code {
+            padding: 0.2em 0.1em;
+            color: #333;
+            background-color: #f8f8f8;
+            font-size: 0.9em;
+            font-weight: lighter;
+            font-family: Monaco,'MonacoRegular',monospace;
+            overflow: visible;
+        }
+    </style>
+    <script src="Loader.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    
+</head>
+<body>
+    <h1>Examples</h1>
+    <div class="loader" id="GreenLoader"></div>
+    <span class="info"><pre><code class="javascript">var green_loader = new Loader();
+green_loader.showLoader(document.getElementById('GreenLoader'));</code></pre></span>
+    <br>
+    <div class="loader" id="RedLoader"></div>
+    <span class="info"><pre><code class="javascript">var red_loader = new Loader();
+red_loader.setLoaderColor('Red');
+red_loader.setAnimationDuration(5);
+red_loader.setTextChange(["Loader finished"], 'last_show_after_end');
+red_loader.showLoader(document.getElementById('RedLoader'));</code></pre></span>
+    <br>
+    <div class="loader" id="OrangeLoader"></div>
+    <span class="info"><pre><code class="javascript">var counterArray = new Array();
+for (var i = 0; i < 100; i+=10){
+counterArray.push(i.toString()+'%');}
+counterArray.push('Now give me all your money');
+var orange_loader = new Loader();
+orange_loader.setLoaderColor('Orange');
+orange_loader.setLoaderBackgroundColor('#eee');
+orange_loader.setTextChange(counterArray, 'last_show_after_end');
+orange_loader.showLoader(document.getElementById('OrangeLoader'));</code></pre></span>
+    <br>
+    <div class="loader" id="rgbLoader"></div>
+    <span class="info"><pre><code class="javascript">var rgb_loader = new Loader();
+rgb_loader.setLoaderColor('rgb(233,30,99)');
+rgb_loader.setTextClass('className');
+rgb_loader.setTextChange(["first string", "second string", 
+                            "should appear before loader finished."]);
+rgb_loader.showLoader(document.getElementById('rgbLoader'));</code></pre></span>
+    
+    <script type="text/javascript">
+    var green_loader = new Loader();
+    green_loader.showLoader(document.getElementById('GreenLoader'));
+
+    var red_loader = new Loader();
+    red_loader.setLoaderColor('Red');
+    red_loader.setAnimationDuration(5);
+    red_loader.setTextChange(["Loader finished"], 'last_show_after_end');
+    red_loader.showLoader(document.getElementById('RedLoader'));
+
+    var counterArray = new Array();
+    for (var i = 0; i < 100; i+=10){
+        counterArray.push(i.toString()+'%');
+    }
+    counterArray.push('Now give me all your money');
+    var orange_loader = new Loader();
+    orange_loader.setLoaderColor('Orange');
+    orange_loader.setLoaderBackgroundColor('#eee');
+    orange_loader.setTextChange(counterArray, 'last_show_after_end');
+    orange_loader.showLoader(document.getElementById('OrangeLoader'));
+
+
+    var rgb_loader = new Loader();
+    rgb_loader.setLoaderColor('rgb(233,30,99)');
+    rgb_loader.setTextClass('className');
+    rgb_loader.setTextChange(["first string", "second string", "should appear before loader finished."]);
+    rgb_loader.showLoader(document.getElementById('rgbLoader'));
+    </script>
+        </body>
